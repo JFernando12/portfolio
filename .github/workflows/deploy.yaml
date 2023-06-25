@@ -27,4 +27,4 @@ jobs:
       - name: Deploy
         run: |
           # Sync the files to S3
-          aws s3 sync . s3://fernandocastrejon.com
+          aws s3 sync . s3://fernandocastrejon.com --exclude ".github/*" --exclude ".git/*" --exclude ".vscode/*" --delete
