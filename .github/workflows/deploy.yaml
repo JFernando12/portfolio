@@ -19,8 +19,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+      - name: Clear S3 Bucket
+        run: |
+          # Empty the S3 bucket
+          aws s3 rm s3://fernandocastrejon.com --recursive
 
       - name: Deploy
         run: |
           # Sync the files to S3
-          aws s3 sync . s3://fernandocastrejon.com --exclude ".github/*" --exclude ".git/*" --exclude ".vscode/*" --delete
+          aws s3 sync . s3://fernandocastrejon.com
