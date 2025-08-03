@@ -79,21 +79,21 @@ export default function Portfolio() {
                     height={200}
                     className="w-full h-48 object-cover rounded-lg mb-4"
                   />
-                  
+
                   <h3 className="text-xl font-medium text-gray-800 dark:text-white mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-6">
                     {item.description}
                   </p>
-                  
-                  <a 
+
+                  {/* <a 
                     href={item.link}
                     className="inline-flex items-center text-blue-500 transition-colors hover:text-blue-600 font-medium"
                   >
                     Demo
                     <ArrowRight className="ml-1 w-4 h-4" />
-                  </a>
+                  </a> */}
                 </div>
               </SwiperSlide>
             ))}

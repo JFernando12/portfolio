@@ -6,47 +6,47 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Hero() {
   return (
-    <section className="py-16 pt-32 md:pt-20 bg-white dark:bg-slate-900" id="home">
+    <section
+      className="py-16 pt-32 md:pt-20 bg-white dark:bg-slate-900"
+      id="home"
+    >
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <div className="flex gap-4 mb-8">
+          <div className="order-2 md:order-1 text-center md:text-left">
+            <div className="flex justify-center md:justify-start gap-4 mb-8">
               <Link
                 href="https://www.linkedin.com/in/fernando-castrej%C3%B3n-hdez-08520223b/"
                 target="_blank"
-                className="inline-flex justify-center items-center bg-blue-500 text-white text-xl rounded-md w-12 h-12 transition-all hover:bg-blue-600"
+                className="inline-flex justify-center items-center bg-blue-500 text-white text-xl rounded-md w-12 h-12 transition-all hover:bg-blue-600 hover:scale-110"
               >
                 <FaLinkedin className="w-5 h-5" />
               </Link>
               <Link
                 href="https://github.com/JFernando12/"
                 target="_blank"
-                className="inline-flex justify-center items-center bg-blue-500 text-white text-xl rounded-md w-12 h-12 transition-all hover:bg-blue-600"
+                className="inline-flex justify-center items-center bg-blue-500 text-white text-xl rounded-md w-12 h-12 transition-all hover:bg-blue-600 hover:scale-110"
               >
                 <FaGithub className="w-5 h-5" />
               </Link>
             </div>
-            
+
             <h1 className="text-3xl md:text-5xl font-semibold text-gray-800 dark:text-white mb-2">
               Hi, I&apos;m Fernando
             </h1>
             <h3 className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium mb-4">
               Software Developer
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg leading-relaxed">
-              I specialize in backend development. From architecting scalable web services to optimizing performance, 
-              I leverage AWS services to deliver robust solutions. My expertise lies in creating seamless backend 
-              systems for exceptional user experiences.
-            </p>
-            <Link 
-              href="#contact" 
-              className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-all hover:bg-blue-600"
-            >
-              Contact Me 
-              <Mail className="ml-2 w-5 h-5" />
-            </Link>
+            <div className="flex justify-center md:justify-start">
+              <Link
+                href="#contact"
+                className="inline-flex items-center bg-blue-500 text-white px-8 py-3 rounded-lg font-medium transition-all hover:bg-blue-600 hover:scale-105"
+              >
+                Contact Me
+                <Mail className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
           </div>
-          
+
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative">
               <svg
@@ -84,10 +84,10 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        
+
         <div className="hidden md:flex justify-center mt-12">
-          <Link 
-            href="#about" 
+          <Link
+            href="#about"
             className="flex items-center text-blue-500 font-medium hover:transform hover:translate-y-1 transition-transform"
           >
             <MousePointer className="text-2xl mr-2" />

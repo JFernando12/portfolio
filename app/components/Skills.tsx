@@ -1,153 +1,164 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, Code, Server } from 'lucide-react';
+import { ChevronDown, Code, Server, LucideIcon } from 'lucide-react';
+
+interface Skill {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: LucideIcon;
+  skills: string[];
+}
 
 export default function Skills() {
   const [openSkill, setOpenSkill] = useState<string | null>('frontend');
+
+  const skillsData: Skill[] = [
+    {
+      id: 'backend',
+      title: 'Backend developer',
+      subtitle: 'More than 2 years',
+      icon: Server,
+      skills: [
+        'Node.js',
+        'Express.js',
+        'Typescript',
+        'REST APIs',
+        'RAG AI',
+        'MySQL',
+        'MongoDB',
+        'PostgreSQL',
+        'Python',
+      ],
+    },
+    {
+      id: 'frontend',
+      title: 'Frontend developer',
+      subtitle: 'More than 4 years',
+      icon: Code,
+      skills: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+      ],
+    },
+  ];
 
   const toggleSkill = (skillType: string) => {
     setOpenSkill(openSkill === skillType ? null : skillType);
   };
 
   return (
-    <section className="py-12 bg-white dark:bg-slate-900" id="skills">
+    <section
+      className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800"
+      id="skills"
+    >
       <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="text-center text-3xl md:text-4xl font-semibold text-gray-800 dark:text-white mb-2">
-          Skills
-        </h2>
-        <span className="block text-center text-sm text-gray-600 dark:text-gray-400 mb-8">
-          My technical level
-        </span>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+            Skills & Expertise
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Technologies and tools I use to bring ideas to life
+          </p>
+        </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Frontend Skills */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm">
-            <div 
-              className="flex items-center mb-6 cursor-pointer"
-              onClick={() => toggleSkill('frontend')}
-            >
-              <Code className="w-8 h-8 text-blue-500 mr-3" />
-              <div className="flex-1">
-                <h3 className="text-lg font-medium text-gray-800 dark:text-white">Frontend developer</h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400">More than 4 years</span>
-              </div>
-              {openSkill === 'frontend' ? (
-                <ChevronUp className="text-blue-500 text-xl" />
-              ) : (
-                <ChevronDown className="text-blue-500 text-xl" />
-              )}
-            </div>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          {skillsData.map((skillCategory, categoryIndex) => {
+            const IconComponent = skillCategory.icon;
+            const isOpen = openSkill === skillCategory.id;
 
-            {openSkill === 'frontend' && (
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">HTML</span>
-                    <span className="text-sm text-gray-500">90%</span>
+            return (
+              <div
+                key={skillCategory.id}
+                className="group bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-slate-700"
+                style={{
+                  animationDelay: `${categoryIndex * 0.2}s`,
+                  animation: 'fadeInUp 0.6s ease-out forwards',
+                }}
+              >
+                <div
+                  className="flex items-center mb-6 cursor-pointer select-none"
+                  onClick={() => toggleSkill(skillCategory.id)}
+                >
+                  <div className="relative p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl mr-4 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors duration-300">
+                    <IconComponent className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '90%'}}></div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-1">
+                      {skillCategory.title}
+                    </h3>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                      {skillCategory.subtitle}
+                    </span>
+                  </div>
+                  <div
+                    className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                  >
+                    <ChevronDown className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                   </div>
                 </div>
 
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">CSS</span>
-                    <span className="text-sm text-gray-500">80%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '80%'}}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">JavaScript</span>
-                    <span className="text-sm text-gray-500">60%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '60%'}}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">React</span>
-                    <span className="text-sm text-gray-500">85%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '85%'}}></div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Backend Skills */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm">
-            <div 
-              className="flex items-center mb-6 cursor-pointer"
-              onClick={() => toggleSkill('backend')}
-            >
-              <Server className="w-8 h-8 text-blue-500 mr-3" />
-              <div className="flex-1">
-                <h3 className="text-lg font-medium text-gray-800 dark:text-white">Backend developer</h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400">More than 2 years</span>
-              </div>
-              {openSkill === 'backend' ? (
-                <ChevronUp className="text-blue-500 text-xl" />
-              ) : (
-                <ChevronDown className="text-blue-500 text-xl" />
-              )}
-            </div>
-
-            {openSkill === 'backend' && (
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">PHP</span>
-                    <span className="text-sm text-gray-500">80%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '80%'}}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">Node.js</span>
-                    <span className="text-sm text-gray-500">70%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '70%'}}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">Firebase</span>
-                    <span className="text-sm text-gray-500">90%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '90%'}}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">Python</span>
-                    <span className="text-sm text-gray-500">55%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '55%'}}></div>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
+                    {skillCategory.skills.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800/30 hover:border-blue-300 dark:hover:border-blue-600/50 transition-all duration-300 transform hover:scale-105 hover:shadow-md group/skill"
+                        style={{
+                          animationDelay: `${index * 0.1}s`,
+                          animation: isOpen
+                            ? 'fadeInScale 0.5s ease-out forwards'
+                            : 'none',
+                        }}
+                      >
+                        <div className="text-center">
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover/skill:text-blue-600 dark:group-hover/skill:text-blue-400 transition-colors duration-200 block leading-tight">
+                            {skill}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            )}
-          </div>
+            );
+          })}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 }
