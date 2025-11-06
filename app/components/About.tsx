@@ -30,7 +30,7 @@ export default function About() {
               experience in web development. Proficient in creating efficient
               backend systems and skilled in frontend development using React
               and Next.js. Certified AWS Developer Associate with a strong
-              dedication to delivering high-quality software solutions.
+              dedication to delivering high quality software solutions.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-8">

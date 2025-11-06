@@ -12,15 +12,17 @@ interface Skill {
 }
 
 export default function Skills() {
-  const [openSkill, setOpenSkill] = useState<string | null>('frontend');
+  const [openSkill, setOpenSkill] = useState<string | null>(null);
 
   const skillsData: Skill[] = [
     {
       id: 'backend',
       title: 'Backend developer',
-      subtitle: 'More than 2 years',
+      subtitle: 'More than 5 years',
       icon: Server,
       skills: [
+        'Python',
+        'FastAPI',
         'Node.js',
         'Express.js',
         'Typescript',
@@ -29,7 +31,8 @@ export default function Skills() {
         'MySQL',
         'MongoDB',
         'PostgreSQL',
-        'Python',
+        'Docker',
+        'AWS',
       ],
     },
     {
@@ -37,15 +40,7 @@ export default function Skills() {
       title: 'Frontend developer',
       subtitle: 'More than 4 years',
       icon: Code,
-      skills: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'React',
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-      ],
+      skills: ['JavaScript', 'React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     },
   ];
 

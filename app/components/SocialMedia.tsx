@@ -5,7 +5,10 @@ import { FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa';
 
 export default function SocialMedia() {
   return (
-    <section className="py-12 bg-gray-50 dark:bg-slate-800" id="social">
+    <section
+      className="py-12 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800"
+      id="social"
+    >
       <div className="container mx-auto px-4 max-w-6xl">
         <h2 className="text-center text-3xl md:text-4xl font-semibold text-gray-800 dark:text-white mb-2">
           Follow My Programming Content
@@ -20,11 +23,15 @@ export default function SocialMedia() {
             <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               <FaInstagram className="w-12 h-12 text-pink-500" />
             </div>
-            <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">Instagram</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Programming tutorials & tips</p>
-            <a 
-              href="https://instagram.com/fernandocastrej" 
-              target="_blank" 
+            <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
+              Instagram
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Programming tutorials & tips
+            </p>
+            <a
+              href="https://instagram.com/fernandocastrej"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-pink-500 hover:text-pink-400 transition-colors font-medium"
             >
@@ -38,11 +45,15 @@ export default function SocialMedia() {
             <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               <FaYoutube className="w-12 h-12 text-red-500" />
             </div>
-            <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">YouTube</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Full programming courses & tutorials</p>
-            <a 
-              href="https://youtube.com/@fernandocastrej" 
-              target="_blank" 
+            <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
+              YouTube
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Full programming courses & tutorials
+            </p>
+            <a
+              href="https://youtube.com/@fernandocastrej"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-red-500 hover:text-red-400 transition-colors font-medium"
             >
@@ -56,11 +67,15 @@ export default function SocialMedia() {
             <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               <FaTiktok className="w-12 h-12 text-gray-800 dark:text-white" />
             </div>
-            <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">TikTok</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Quick programming tips & tricks</p>
-            <a 
-              href="https://tiktok.com/@fernandocastrej" 
-              target="_blank" 
+            <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
+              TikTok
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Quick programming tips & tricks
+            </p>
+            <a
+              href="https://tiktok.com/@fernandocastrej"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-gray-800 dark:text-white hover:text-blue-500 transition-colors font-medium"
             >

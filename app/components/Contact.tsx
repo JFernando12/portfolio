@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -73,7 +73,7 @@ export default function Contact() {
 
   return (
     <section className="py-12 bg-white dark:bg-slate-900" id="contact">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-8 max-w-6xl">
         <h2 className="text-center text-3xl md:text-4xl font-semibold text-gray-800 dark:text-white mb-2">
           Contact Me
         </h2>
