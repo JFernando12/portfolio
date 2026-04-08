@@ -30,12 +30,12 @@ export default function SocialMedia() {
               Programming tutorials & tips
             </p>
             <a
-              href="https://instagram.com/fernandocastrej"
+              href="https://instagram.com/fernancode"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-pink-500 hover:text-pink-400 transition-colors font-medium"
             >
-              @fernandocastrej
+              @fernancode
               <ExternalLink className="ml-1 w-4 h-4" />
             </a>
           </div>
@@ -74,12 +74,12 @@ export default function SocialMedia() {
               Quick programming tips & tricks
             </p>
             <a
-              href="https://tiktok.com/@fernandocastrej"
+              href="https://tiktok.com/@fernancode"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-gray-800 dark:text-white hover:text-blue-500 transition-colors font-medium"
             >
-              @fernandocastrej
+              @fernancode
               <ExternalLink className="ml-1 w-4 h-4" />
             </a>
           </div>
